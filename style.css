@@ -102,6 +102,8 @@
   padding: 0.6rem;
   margin: 0.6rem;
   font-size: 32px;
+}
+.key {
   transition: all 0.07s;
 }
 .key:hover,
