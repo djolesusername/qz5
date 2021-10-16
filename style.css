@@ -1,162 +1,186 @@
 :root {
-    --blue-dl: hsl(212, 100%, 50%);
-    --grey-l: hsl(217, 20%, 51%);
-    --navy-l: hsl(217, 35%, 45%);
-    --black-dl: hsl(220, 40%, 13%);
-    --background-light: hsl(227, 100%, 98%);
-    --white-l: hsl(0, 0, 100%);
-    --white2-l: hsl(227, 100%, 98%);
-    --navy-d: hsl(222, 41%, 20%);
-
+  --cyan-key: hsl(185, 42%, 37%);
+  --darkcyan-keyshadow: hsl(185, 58%, 25%);
+  --orange-bgd: hsl(25, 98%, 40%);
+  --darkorange-keyshadow: hsl(25, 99%, 27%);
+  --lightgrey-yellow: hsl(45, 7%, 89%);
+  --darkgrey-orange: hsl(35, 11%, 61%);
+  --verydarkgrey-yellow: hsl(60, 10%, 19%);
+  --darkviolet-keybgrd: hsl(281, 89%, 26%);
+  --vivid-magneta: hsl(285, 91%, 52%);
+  --pure-cyan: (176, 100%, 44%);
+  --softcyan: hsl(177, 92%, 70%);
+  --verydarkviolet: hsl(268, 47%, 21%);
+  --dark-magneta: hsl(290, 70%, 36%);
+  --lightyellow: hsl(52, 100%, 62%);
+  --verydarkblue: hsl(198, 20%, 13%);
+  --darkblue-background1: hsl(222, 26%, 31%);
+  --darkblue-background2: hsl(223, 31%, 20%);
+  --darkblue-background3: hsl(224, 36%, 15%);
+  --darkblue-key1: hsl(225, 21%, 49%);
+  --darkblue-keys: hsl(224, 28%, 35%);
+  --red-key: hsl(6, 63%, 50%);
+  --darkred: hsl(6, 70%, 34%);
+  --lightorange: hsl(30, 25%, 89%);
+  --grayish-orange: hsl(28, 16%, 65%);
+  --darkblue-text: hsl(221, 14%, 31%);
 }
 
-@media(prefers-color-scheme: dark) {
-    :root {
-        --blue-dl: hsl(212, 100%, 50%);
-        --grey-l: hsl(217, 20%, 51%);
-        --navy-l: hsl(217, 35%, 45%);
-        --black-dl: hsl(220, 40%, 13%);
-        --light-blue-l: hsl(227, 100%, 98%);
-        --white-l: hsl(0, 0, 100%);
-        --navy-d: hsl(222, 41%, 20%)
-    }
-
+@media (prefers-color-scheme: dark) {
+  :root {
+    --darkblue-background1: hsl(222, 26%, 31%);
+    --darkblue-background2: hsl(223, 31%, 20%);
+    --darkblue-background3: hsl(224, 36%, 15%);
+    --darkblue-key1: hsl(225, 21%, 49%);
+    --darkblue-keys: hsl(224, 28%, 35%);
+    --red-key: hsl(6, 63%, 50%);
+    --darkred: hsl(6, 70%, 34%);
+    --lightorange: hsl(30, 25%, 89%);
+    --lightorange2: hsla(30, 25%, 89%, 0.5);
+    --grayish-orange: hsl(28, 16%, 65%);
+    --darkblue-text: hsl(221, 14%, 31%);
+  }
 }
-[color-scheme="dark"]  {
-    --blue-dl: hsl(212, 100%, 50%);
-    --white-l-opacity: rgba(255,255,255, 0.5)
-    --grey-l: hsl(217, 20%, 51%);
-    --navy-l: hsl(217, 35%, 45%);
-    --black-dl: hsl(220, 40%, 13%);
-    --light-blue-l: hsl(227, 100%, 98%);
-    --white-l: hsl(0, 0, 100%);
-    --navy-d: hsl(222, 41%, 20%);
-    --button-svg: url("./assets/icon-sun.svg");
-    --background-color: var(--black-dl);
-    --container-background: var(--navy-d);
-    --textcolor: white;
-    --heading-color: white;
-    --text-opacity: var(--grey-l);
-    background-color: black;
-   }
+[color-scheme="dark"] {
+  color: var(--darkblue-text);
+  --background-color: var(--darkblue-background1);
+  --keypadbackground: var(--darkblue-background2);
+  --screenbackground: var(--darkblue-background3);
+  --keybackground: var(--lightorange);
+  --keyshadow: var(--grayish-orange);
+  --keybackgorund-special: var(--lightorange);
+  --keyshadow-special: var(--grayish-orange);
+  --text: var(--darkblue-text);
+  --text-option: white;
+  --keypad-shadow-option: var(--darkblue-keys);
+  --special-key-background: var(--darkblue-key1);
+}
 
 [color-scheme="light"] {
-    --textcolor: var(--grey-l);
-    --blue-dl: hsl(212, 100%, 50%);
-    --grey-l: hsl(217, 20%, 51%);
-    --grey-l-opacity: rgba(105, 124, 155, 0.5);
-    --navy-l: hsl(217, 35%, 45%);
-    --black-dl: hsl(220, 40%, 13%);
-    --light-blue-l: hsl(227, 100%, 98%);
-    --white-l: hsl(0, 0, 100%);
-    --navy-d: hsl(222, 41%, 20%);
-    --background-color: var( --background-light);
-    --button-svg: url("./assets/icon-moon.svg");
-    --container-background: white;
-    --heading-color: var(--black-dl);
-    --text-opacity: var(--grey-l-opacity);
-    background-color: white;
+  --textcolor: var(--grey-l);
 }
 
 [color-scheme="purple"] {
-    --textcolor: purple;
-    --blue-dl: purple;
-    --grey-l:purple;
-    --grey-l-opacity: purple;
-    --navy-l:purple;
-    --black-dl:purple;
-    --light-blue-l: purple;
-    --whitepurple: purple;
-    --navy-d:purple;
-    --background-color: purple;
-    --button-svg: purple;
-    --container-background: purple;
-    --heading-color: purple;
-    --text-opacity: purple;
-    color: purple;
-    background-color: purple;
+  --textcolor: purple;
 }
 
-
-
-
-/* begin css for radio*/
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
-
-
-
-/* end css for radio*/
-
+.top,
+.screen,
+.keypad {
+  margin: auto;
+  padding: 1rem;
+  width: 400px;
+  min-width: 33%;
+  border-radius: 12px;
+}
+.top {
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+  margin-top: 4rem;
+}
+.screen {
+  margin-bottom: 1rem;
+  text-align: right;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 32px;
+  color: var(--text-option);
+}
 
 .keypad {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  background-color: blue;
+  grid-template-columns: 25% 25% 25% 25%;
+  background-color: var(--keypadbackground);
+  text-align: center;
+  grid-row-gap: 1rem;
 }
-
+.keypad div {
+  border-radius: 8px;
+  background-color: var(--keybackground);
+  box-shadow: 0 0.2rem 0 var(--keyshadow);
+  cursor: pointer;
+  padding: 0.6rem;
+  margin: 0.6rem;
+  font-size: 32px;
+  transition: all 0.07s;
+}
+.key:hover,
+.key:focus,
+.key:active,
+div .activekey {
+  background-color: var(--text-option);
+}
 .reset {
-  grid-column: 1/2;
+  grid-column: 1 / span 2;
+  text-align: center;
 }
 
 .equals {
-  grid-column: 3/4;
+  grid-column: 3 / span 2;
+  text-align: center;
 }
+
+.screen {
+  background-color: var(--screenbackground);
+}
+
+div .delete,
+div .reset {
+  background-color: var(--special-key-background) !important;
+  color: var(--text-option);
+  font-size: 24px;
+  box-shadow: 0 0.2rem 0 var(--keypad-shadow-option);
+}
+
+/* start button style*/
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: 0.2s all linear;
+
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+
+  border: none;
+  margin-right: 1px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 4px;
+}
+
+.color-me {
+  background-color: --;
+  width: 65px;
+  border-radius: 120px;
+  text-align: center;
+}
+input:checked {
+  border: 9px solid var(--red-key);
+}
+
+button,
+legend {
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+  font-size: 12px;
+  letter-spacing: 0.5rem;
+}
+
+button:hover,
+button:focus {
+  color: aqua;
+}
+
+.theme-text {
+  text-align: right;
+  justify-content: end;
+  margin-top: 1rem;
+}
+
+/*End button style*/
