@@ -64,27 +64,38 @@
   --textcolor: purple;
 }
 
+body {
+  font-family: "Spartan", sans-serif;
+  background-color: var(--darkblue-background1);
+  color: var(--text-option);
+}
+.heading {
+  font-size: 32px;
+}
 .top,
 .screen,
 .keypad {
   margin: auto;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 400px;
   min-width: 33%;
   border-radius: 12px;
 }
 .top {
   display: grid;
-  grid-template-columns: 40% 20% 40%;
-  margin-top: 4rem;
+  grid-template-columns: 70% auto auto;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 .screen {
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   text-align: right;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+
   font-size: 32px;
   color: var(--text-option);
+  background-color: var(--screenbackground);
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 .keypad {
@@ -92,7 +103,7 @@
   grid-template-columns: 25% 25% 25% 25%;
   background-color: var(--keypadbackground);
   text-align: center;
-  grid-row-gap: 1rem;
+  grid-row-gap: 0.3rem;
 }
 .keypad div {
   border-radius: 8px;
@@ -101,7 +112,10 @@
   cursor: pointer;
   padding: 0.6rem;
   margin: 0.6rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
   font-size: 32px;
+  color: var(--text);
 }
 .key {
   transition: all 0.07s;
@@ -122,10 +136,6 @@ div .activekey {
   text-align: center;
 }
 
-.screen {
-  background-color: var(--screenbackground);
-}
-
 div .delete,
 div .reset {
   background-color: var(--special-key-background) !important;
@@ -134,6 +144,10 @@ div .reset {
   box-shadow: 0 0.2rem 0 var(--keypad-shadow-option);
 }
 
+div .equals {
+  background-color: var(--red-key);
+  color: var(--text-option);
+}
 /* start button style*/
 
 input {
@@ -143,22 +157,24 @@ input {
   transition: 0.2s all linear;
 
   border-radius: 50%;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
 
   border: none;
-  margin-right: 1px;
+  margin-right: 2px;
   padding: 0;
   margin: 0;
   position: relative;
-  top: 4px;
+  top: 2px;
+  left: -2px;
 }
 
 .color-me {
-  background-color: --;
+  background-color: var(--keypadbackground);
   width: 65px;
   border-radius: 120px;
   text-align: center;
+  float: right;
 }
 input:checked {
   border: 9px solid var(--red-key);
@@ -170,8 +186,13 @@ legend {
   margin: 0;
   border-radius: 0;
   border: 0;
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.5rem;
+}
+legend {
+  letter-spacing: 0.3rem;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 button:hover,
@@ -182,7 +203,11 @@ button:focus {
 .theme-text {
   text-align: right;
   justify-content: end;
-  margin-top: 1rem;
+  margin-top: 1.8rem;
+  font-size: 0.75rem;
 }
-
+.radio-button-container {
+  justify-content: end;
+  text-align: right;
+}
 /*End button style*/

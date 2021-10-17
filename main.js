@@ -92,33 +92,34 @@ const handleDigit = (numberInput) => {
   inputReset();
   input = input.concat(numberInput);
   subinput = subinput.concat(numberInput);
-  screen.innerHTML = input;
+  let screenText = input;
+  screen.innerHTML = screenText.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
 const handleReset = () => {
   input = "0";
   subinput = "";
-  screen.innerHTML = input;
+  screen.innerHTML = Number(input).toLocaleString("en", { useGrouping: true });
 };
 
 const handleDelete = () => {
   if (input.length === 1) {
-    handlenumInputet();
+    handleReset();
     return;
   }
   input = input.slice(0, -1);
   subinput = subinput.slice(0, -1);
-  screen.innerHTML = input;
+  screen.innerHTML = input.toLocaleString("en", { useGrouping: true });
 };
 
 const handleOperation = (e) => {
   if (acceptedOperations.indexOf(input[input.length - 1]) !== -1) {
     input = input.slice(0, -1).concat(e);
-    screen.innerHTML = input;
+    screen.innerHTML = input.toLocaleString("en", { useGrouping: true });
     return;
   }
   input = input.concat(e);
-  screen.innerHTML = input;
+  screen.innerHTML = input.toLocaleString("en", { useGrouping: true });
   subinput = "";
 };
 
@@ -202,7 +203,7 @@ const goCalc = () => {
 
   input = String(result);
   subinput = String(result);
-  screen.innerHTML = input;
+  screen.innerHTML = result.toLocaleString("en", { useGrouping: true });
 };
 
 //keyboard eventlistenrs
@@ -240,6 +241,10 @@ window.addEventListener("keydown", function (e) {
 
   if (e.key === "c") {
     handleReset();
+  }
+
+  if (e.key === "Enter") {
+    goCalc();
   }
 });
 
