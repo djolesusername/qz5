@@ -8,9 +8,11 @@
   --verydarkgrey-yellow: hsl(60, 10%, 19%);
   --darkviolet-keybgrd: hsl(281, 89%, 26%);
   --vivid-magneta: hsl(285, 91%, 52%);
-  --pure-cyan: (176, 100%, 44%);
+  --pure-cyan: hsl(176, 100%, 44%);
   --softcyan: hsl(177, 92%, 70%);
-  --verydarkviolet: hsl(268, 47%, 21%);
+  --verydarkviolet1: hsl(268, 75%, 9%);
+  --verydarkviolet2: hsl(268, 71%, 12%);
+  --verydarkviolet3: hsl(268, 47%, 21%);
   --dark-magneta: hsl(290, 70%, 36%);
   --lightyellow: hsl(52, 100%, 62%);
   --verydarkblue: hsl(198, 20%, 13%);
@@ -24,6 +26,18 @@
   --lightorange: hsl(30, 25%, 89%);
   --grayish-orange: hsl(28, 16%, 65%);
   --darkblue-text: hsl(221, 14%, 31%);
+  --lightgrey: hsl(0, 0%, 90%);
+  --grayish-red: (0, 5%, 81%);
+  --very-lightgrey: hsl(0, 0%, 93%);
+  --darkmoderate-cyan: hsl(185, 42%, 37%);
+  --verydark-cyan: hsl(185, 58%, 25%);
+  --orange: hsl(25, 98%, 40%);
+  --dark-orange: hsl(25, 99%, 27%);
+  --lighty--yellow: hsl(45, 7%, 89%);
+  --darkgrey-orange: hsl(35, 11%, 61%);
+  --verydark-grey-yellow: hsl(60, 10%, 19%);
+  --dark-violet-key: hsl(281, 89%, 26%);
+  --vivid-magneta-key: hsl(285, 91%, 52%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,7 +56,6 @@
   }
 }
 [color-scheme="dark"] {
-  color: var(--darkblue-text);
   --background-color: var(--darkblue-background1);
   --keypadbackground: var(--darkblue-background2);
   --screenbackground: var(--darkblue-background3);
@@ -54,20 +67,48 @@
   --text-option: white;
   --keypad-shadow-option: var(--darkblue-keys);
   --special-key-background: var(--darkblue-key1);
+  --redbutton: var(--red-key);
+  --heading-prime: white;
 }
 
 [color-scheme="light"] {
-  --textcolor: var(--grey-l);
+  --background-color: var(--lightgrey);
+  --keypadbackground: var(--grayish-red);
+  --screenbackground: var(--very-lightgrey);
+  --keybackground: var(--lightgrey-yellow);
+  --keyshadow: var(--darkgrey-orange);
+  --keybackgorund-special: var(--lightgrey-yellow);
+  --keyshadow-special: var(--darkgrey-orange);
+  --text: var(--verydarkgrey-yellow);
+  --text-option: white;
+  --keypad-shadow-option: var(--verydark-cyan);
+  --special-key-background: var(--darkmoderate-cyan);
+  --redbutton: var(--orange);
+  --heading-prime: var(--verydark-grey-yellow);
 }
 
 [color-scheme="purple"] {
-  --textcolor: purple;
+  --background-color: var(--verydarkviolet1);
+  --keypadbackground: var(--verydarkviolet2);
+  --screenbackground: var(--verydarkviolet2);
+  --keybackground: var(--verydarkviolet3);
+  --keyshadow: var(--dark-magneta);
+  --keybackgorund-special: var(--lightgrey-yellow);
+  --keyshadow-special: var(--darkgrey-orange);
+  --text: var(--lightyellow);
+  --text-option: white;
+  --keypad-shadow-option: var(--dark-violet-key);
+  --special-key-background: var(--dark-violet-key);
+  --redbutton: var(--pure-cyan);
+  --redbutton-shadow: var(--softcyan);
+  --heading-prime: var(--lightyellow);
 }
 
 body {
   font-family: "Spartan", sans-serif;
-  background-color: var(--darkblue-background1);
-  color: var(--text-option);
+  background-color: var(--background-color);
+  color: var(--heading-prime);
+  font-weight: 700;
 }
 .heading {
   font-size: 32px;
@@ -123,7 +164,16 @@ body {
 .key:hover,
 .key:focus,
 .key:active,
-div .activekey {
+.floatNumber:hover,
+.floatNumber:focus,
+.floatNumber:active,
+div.activekey,
+.delete:active,
+.operation:active,
+.delete:hover,
+.operation:hover,
+.delete:focus,
+.operation:focus {
   background-color: var(--text-option);
 }
 .reset {
@@ -138,15 +188,16 @@ div .activekey {
 
 div .delete,
 div .reset {
-  background-color: var(--special-key-background) !important;
+  background-color: var(--special-key-background);
   color: var(--text-option);
   font-size: 24px;
   box-shadow: 0 0.2rem 0 var(--keypad-shadow-option);
 }
 
 div .equals {
-  background-color: var(--red-key);
+  background-color: var(--redbutton);
   color: var(--text-option);
+  box-shadow: 0 0.2rem 0 var(--redbutton-shadow);
 }
 /* start button style*/
 
@@ -193,11 +244,6 @@ legend {
   letter-spacing: 0.3rem;
   padding-left: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-button:hover,
-button:focus {
-  color: aqua;
 }
 
 .theme-text {
