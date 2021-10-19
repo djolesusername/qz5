@@ -67,7 +67,7 @@ const handleAnimation = (event) => {
       buttonToAnimate.classList.remove("activekey");
     }, 250);
   } catch (err) {
-    console.log("key not used");
+    ("key not used");
   }
 };
 

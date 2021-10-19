@@ -69,11 +69,14 @@
   --special-key-background: var(--darkblue-key1);
   --redbutton: var(--red-key);
   --heading-prime: white;
+  --hover-special: var(--darkblue-keys);
+  --screrentext: var(--text-option);
+  --active-special: var(--darkred);
 }
 
 [color-scheme="light"] {
   --background-color: var(--lightgrey);
-  --keypadbackground: var(--grayish-red);
+  --keypadbackground: hsl(0, 5%, 81%);
   --screenbackground: var(--very-lightgrey);
   --keybackground: var(--lightgrey-yellow);
   --keyshadow: var(--darkgrey-orange);
@@ -85,6 +88,9 @@
   --special-key-background: var(--darkmoderate-cyan);
   --redbutton: var(--orange);
   --heading-prime: var(--verydark-grey-yellow);
+  --screrentext: var(--text);
+  --active-special: var(--dark-orange);
+  --hover-special: var(--verydark-cyan);
 }
 
 [color-scheme="purple"] {
@@ -102,6 +108,9 @@
   --redbutton: var(--pure-cyan);
   --redbutton-shadow: var(--softcyan);
   --heading-prime: var(--lightyellow);
+  --hover-special: var(--dark-magneta);
+  --screrentext: var(--text);
+  --active-special: var(--softcyan);
 }
 
 body {
@@ -133,7 +142,7 @@ body {
   text-align: right;
 
   font-size: 32px;
-  color: var(--text-option);
+  color: var(--screrentext);
   background-color: var(--screenbackground);
   padding-bottom: 2rem;
   padding-top: 2rem;
@@ -168,17 +177,26 @@ body {
 .floatNumber:focus,
 .floatNumber:active,
 div.activekey,
-.delete:active,
 .operation:active,
-.delete:hover,
 .operation:hover,
-.delete:focus,
 .operation:focus {
-  background-color: var(--text-option);
+  background-color: var(--keyshadow);
 }
+
 .reset {
   grid-column: 1 / span 2;
   text-align: center;
+}
+
+.delete:active,
+#reset:active,
+.delete:hover,
+#reset:hover,
+.delete:focus,
+#reset:focus,
+.delete.activekey,
+#reset.activekey {
+  background-color: var(--hover-special) !important;
 }
 
 .equals {
@@ -194,10 +212,16 @@ div .reset {
   box-shadow: 0 0.2rem 0 var(--keypad-shadow-option);
 }
 
-div .equals {
+div.equals {
   background-color: var(--redbutton);
   color: var(--text-option);
   box-shadow: 0 0.2rem 0 var(--redbutton-shadow);
+}
+#equals.activekey,
+#equals:hover,
+#equal:active,
+#equals:focus {
+  background-color: var(--active-special);
 }
 /* start button style*/
 
@@ -257,3 +281,16 @@ legend {
   text-align: right;
 }
 /*End button style*/
+
+@media only screen and (max-width: 410px) {
+  .top,
+  .screen,
+  .keypad {
+    width: 260px;
+  }
+
+  .keypad div {
+    margin-right: 0.4rem;
+    margin-left: 0.4rem;
+  }
+}
