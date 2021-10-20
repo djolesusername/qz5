@@ -88,6 +88,16 @@ const inputReset = () => {
   }
 };
 
+const handleComma = () => {
+  if (subinput.indexOf(".") !== -1) {
+    return;
+  }
+  input = input.concat(e.key);
+  subinput = subinput.concat(e.key);
+  screen.innerHTML = input;
+  return;
+};
+
 const handleDigit = (numberInput) => {
   inputReset();
   input = input.concat(numberInput);
@@ -230,13 +240,7 @@ window.addEventListener("keydown", function (e) {
   //handling . avoiding .. with subinput throught out the logic
   //and making sure that . doesn't go next to operation sign
   if (e.key == "." && acceptedOperations.indexOf(input[input.length - 1]) === -1) {
-    if (subinput.indexOf(".") !== -1) {
-      return;
-    }
-    input = input.concat(e.key);
-    subinput = subinput.concat(e.key);
-    screen.innerHTML = input;
-    return;
+    handleComma();
   }
 
   if (e.key === "c") {
@@ -260,6 +264,10 @@ document.getElementById("reset").addEventListener("click", function () {
 
 document.getElementById("delete").addEventListener("click", function () {
   handleDelete();
+});
+
+document.getElementById("floatNumber").addEventListener("click", function () {
+  handleComma();
 });
 
 document.getElementById("equals").addEventListener("click", function () {
