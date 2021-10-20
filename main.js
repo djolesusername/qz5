@@ -92,8 +92,8 @@ const handleComma = () => {
   if (subinput.indexOf(".") !== -1) {
     return;
   }
-  input = input.concat(e.key);
-  subinput = subinput.concat(e.key);
+  input = input.concat(".");
+  subinput = subinput.concat(".");
   screen.innerHTML = input;
   return;
 };
